@@ -1,0 +1,65 @@
+.navbar {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color: $back;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__item {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__link {
+        padding: 10px;
+        transition: all 1s;
+        &:hover {
+            border-radius: 15px;
+            background-color: $bright;
+        }
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &__icon {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.bi {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger {
+    display: none;
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import 'base/variables';
+@import 'base/fonts';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fredoka", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $back;
+    position: relative;
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: $bright;
+    color: #fff;
+    outline: none;
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 0.5s ease;
+    &:hover {
+        box-shadow: none;
+        background-color: $active;
+    }
+}
+
+.title {
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle {
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider {
+    margin-top: 50px;
+    height: 2px;
+    background-color: #fff;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.back {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50%;
+    background-color: $bright;
+    display: none;
+    padding: 10px;
+    transition: all 0.5s;
+    &:hover {
+        background-color: $active;
+    }
+}
+
+.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@import 'blocks/navbar';
+@import 'blocks/showcase';
+@import 'blocks/about';
+@import 'blocks/projects';
+@import 'blocks/tech';
+@import 'blocks/contact';
+@import 'blocks/footer';
+@import 'blocks/media';
