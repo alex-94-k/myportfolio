@@ -75,4 +75,4 @@ gulp.task('mailer', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'images', 'icons', 'mailer', 'html'));
+gulp.task('default', gulp.parallel('watch', 'server', 'images', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html'));
