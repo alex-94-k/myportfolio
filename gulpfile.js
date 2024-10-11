@@ -18,6 +18,13 @@ gulp.task('server', function() {
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
+gulp.task('images', function() {
+    return gulp.src("src/img/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img"))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('styles', function() {
     return gulp.src("src/sass/**/*.+(scss|sass)")
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
@@ -65,13 +72,6 @@ gulp.task('icons', function() {
 gulp.task('mailer', function() {
     return gulp.src("src/mailer/**/*")
         .pipe(gulp.dest("dist/mailer"))
-        .pipe(browserSync.stream());
-});
-
-gulp.task('images', function() {
-    return gulp.src("src/img/**/*")
-        .pipe(imagemin())
-        .pipe(gulp.dest("dist/img"))
         .pipe(browserSync.stream());
 });
 
