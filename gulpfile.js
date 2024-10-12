@@ -6,6 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const imagemin = require ('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const replace = require('gulp-replace');
 
 gulp.task('server', function() {
 
@@ -28,11 +29,13 @@ gulp.task('images', function() {
 gulp.task('styles', function() {
     return gulp.src("src/sass/**/*.+(scss|sass)")
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(replace(/url\(['"]?(.+?\.jpg|.+?\.png|.+?\.svg)['"]?\)/g, function(match, p1) {
+            return 'url(/img/' + p1 + ')';
+        }))        
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest("dist/css"))
-        .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });
 
